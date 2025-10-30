@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #ecf1e4;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    text-align: center;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #84283c;
+    position: absolute;
+    animation: grow 3s ease-in-out infinite;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    top: 35vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(85, 85, 85, 0.4);
+    position: absolute;
+}
+
+@keyframes grow {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        text-shadow: none;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+        text-shadow: 0 0 2px #333;
+    }
+}
+
+.animations {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: opacity 0.3s ease;
+    animation: movee 12s infinite linear;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.circle:hover {
+    opacity: 0;
+}
+
+@keyframes movee {
+    0% {
+        top: 20px;
+        left: 20px;
+    }
+    25% {
+        top: 20px;
+        left: calc(100vw - 100px);
+    }
+    50% {
+        top: calc(100vh - 100px);
+        left: calc(100vw - 100px);
+    }
+    75% {
+        top: calc(100vh - 100px);
+        left: 20px;
+    }
+    100% {
+        top: 20px;
+        left: 20px;
+    }
+}
+
+.loading {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 5vh;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #e55f7c, #af3550);
+    border-radius: 10px;
+    animation: fillLoadingBar 3s infinite ease-in-out;
+}
+
+@keyframes fillLoadingBar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
